@@ -1,0 +1,19 @@
+---
+title: "Agenda for R-Ladies Ames Launch Party"
+author: "Sam Tyner, Natalia Da Silva"
+date: "15 Dec 2016"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Draft
+
+1. Introduction
+2. Food
+3. Presentation about R-Ladies organizations
+4. Meeting ideas
+5. Pick first meeting topic
+6. Socializing
