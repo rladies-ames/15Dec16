@@ -3,6 +3,8 @@ Agenda for R-Ladies Ames Launch Party
 Sam Tyner, Natalia Da Silva
 15 Dec 2016
 
+![](files/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.svg)
+
 Draft
 -----
 

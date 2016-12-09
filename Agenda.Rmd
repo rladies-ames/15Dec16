@@ -9,6 +9,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+![](files/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.svg)
+
 ## Draft
 
 1. Introduction
