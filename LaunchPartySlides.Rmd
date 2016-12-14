@@ -1,5 +1,5 @@
 ---
-title: <span style="color:##181818">R-Ladies Ames Launch Party</span>
+title: <span style="color:#181818">R-Ladies Ames Launch Party</span>
 author:  "Sam Tyner, Natalia da Silva"
 date: "15 Dec 2016"
 output: ioslides_presentation
@@ -10,7 +10,7 @@ output: ioslides_presentation
  .title-slide {
      background-image: url(imgs/R-LadiesGlobal_banner.png);
      background-repeat: no-repeat;
-        background-size: 400px 200px;
+        background-size: 400px, 300px;
    }
    </style>
 
@@ -20,11 +20,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-##<span style="color:#88398A">Oultine</span> 
+##<span style="color:#88398A">Outline</span> 
 1. R-Ladies Global
-2. R-ladies Ames
+2. R-Ladies Ames
 3. Meeting ideas
-4. Know about each other
+4. Get to know each other
 5. Pick first meeting topic
 6. Socializing
 
@@ -32,8 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 "R-Ladies is a worldwide organization whose mission is to promote Gender Diversity in the R community""
 
-
-We are underrepresented in every role:
+Women are underrepresented in every role:
 
 * package developers
 * conference speakers
@@ -41,7 +40,7 @@ We are underrepresented in every role:
 * leadership positions
 * ....
 
-Encourage women to be represented in ......
+The aim of R-Ladies Global is to encourage women to be more represented throughout the R Community. 
 
 
 ##<span style="color:#88398A">R-Ladies Global</span> 
@@ -50,13 +49,13 @@ Encourage women to be represented in ......
 
 * Today there are groups in 25 cities around the world
 <center>
-<img src="imgs/map.png" height="300px" width="500px" />
+<img src="imgs/map.png" height="370px"/>
 
 </center>
 
 ## <span style="color:#88398A">R-Ladies Organization Structure</span>
 
-<img src="imgs/structure.png" height="500px" width="700px" />
+<img src="imgs/structure.png" height="500px"/>
 
 
 ## <span style="color:#88398A">Want to know more?</span>
@@ -66,7 +65,6 @@ Web presence:
 * Website: http://www.rladies.org
 * E-mail: info@rladies.org
 * Twitter: @RLadiesGlobal
-* Slack: http://r-ladies.slack.com
 * GitHub: http://github.com/rladies
 * Global directory of female R practitioners / speakers: https://rladies.org/ladies/
 
@@ -89,23 +87,35 @@ Organizers:
 * E-mail: ames@rladies.org
 * Meetup: http://meetup.com/R-Ladies-Ames/
 
-##<span style="color:#88398A">R-ladies Ames: R-Ladies Ames</span> 
 
-```{r, echo=FALSE,message=FALSE,warning=FALSE,cache=TRUE}
+```{r, echo=FALSE,message=FALSE,warning=FALSE,cache=TRUE,eval=FALSE}
+##<span style="color:#88398A">R-ladies Ames: R-Ladies Ames</span> 
 library(ggplot2)
-library()
 dat <- read.csv("info.csv", header=TRUE)
 ggplot(data = dat, aes(x=ISU)) + geom_bar(aes(y=(..count..)/sum(..count..)))  + labs(y = "Proportion",  x = "ISU")
 
 ```
 
-
-
 ##<span style="color:#88398A">R-ladies Ames: Meeting frequency</span> 
 
 ```{r, echo=FALSE,fig.height=5,fig.width=5,message=FALSE,warning=FALSE,cache=TRUE}
-ggplot(data = dat, aes(x=often)) + geom_bar(aes(y=(..count..)/sum(..count..))) + theme(axis.text.x =  element_text(angle=90)) + labs(y = "Proportion",  x = "Meetings")
-
+library(ggplot2)
+r_ladies_theme <- function(){
+  theme_bw() %+replace% 
+  theme(text = element_text(family = "HelveticaNeue", face = "plain", colour = 'black', size = 10,
+                            hjust = .5, vjust = .5, angle = 0, lineheight = 1.1, 
+                            margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "pt"), debug= FALSE), 
+        axis.text = element_text(colour = "#A3A4A9"), 
+        axis.title = element_text(face = "bold", colour = "#88398A"), 
+        plot.title = element_text(face = "bold", size = rel(1.25), colour = "#88398A", margin = margin(t = 0, r = 0, b = 6.6, l = 0, unit = "pt")),
+        legend.title = element_text(face = "bold"))
+}
+dat <- read.csv("info.csv", header=TRUE)
+ggplot(data = dat, aes(x=reorder(often, table(often)[often]))) +
+  geom_bar(aes(y=(..count..)/sum(..count..)), alpha=.8) + 
+  coord_flip() + 
+  labs(y = "Proportion",  x = "Meeting Frequency", title = "How often should we meet?") +
+  r_ladies_theme()
 ```
 
 
