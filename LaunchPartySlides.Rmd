@@ -153,18 +153,18 @@ wordcloud(learnCorpus, min.freq = 2, random.order =FALSE,
           colors = cols[5:9], ordered.colors = F)
 ```
 
-##<span style="color:#88398A">R-ladies Ames: Meeting ideas</span> 
 
-To do....
 
 ##<span style="color:#88398A">R-ladies Ames: Getting to know you</span> 
 
-> - Student or faculty at Iowa State?
+> - Student, faculty at Iowa State or other Ames?
 > - Cats or dogs?
 > - Have or are working on a degree in Statistics?
 > - Chocolate or vanilla?
 
 ##<span style="color:#88398A">R-ladies Ames: First meeting topic</span> 
+
+
 
 ##<span style="color:#88398A">R-ladies Ames: Socializing</span> 
 
