@@ -89,37 +89,48 @@ Organizers:
 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE,cache=TRUE,eval=FALSE}
-##<span style="color:#88398A">R-ladies Ames: R-Ladies Ames</span> 
+##<span style="color:#88398A">R-Ladies Ames: R-Ladies Ames</span> 
 library(ggplot2)
 dat <- read.csv("RladiesSurveyResults.csv", header=TRUE)
 ggplot(data = dat, aes(x=ISU)) + geom_bar(aes(y=(..count..)/sum(..count..)))  + labs(y = "Proportion",  x = "ISU")
 
 ```
 
-##<span style="color:#88398A">R-ladies Ames: Meeting frequency</span> 
+##<span style="color:#88398A">R-Ladies Ames: Meeting frequency</span> 
 
 ```{r, echo=FALSE,fig.align='center',fig.height=5,message=FALSE,warning=FALSE,cache=TRUE}
 library(ggplot2)
 r_ladies_theme <- function(){
   theme_bw() %+replace% 
-  theme(text = element_text(family = "HelveticaNeue", face = "plain", colour = 'black', size = 10,
-                            hjust = .5, vjust = .5, angle = 0, lineheight = 1.1, 
-                            margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "pt"), debug= FALSE), 
-        axis.text = element_text(colour = "#D3D3D3"), 
+  theme(text = element_text(family = "HelveticaNeue", face = "plain",
+                            colour = 'black', size = 10,
+                            hjust = .5, vjust = .5, angle = 0, 
+                            lineheight = 1.1, 
+                            margin = margin(t = 0, r = 0, b = 0, l = 0, 
+                                            unit = "pt"), debug= FALSE), 
+        axis.text = element_text(colour = "#181818"), 
         axis.title = element_text(face = "bold", colour = "#88398A"), 
-        plot.title = element_text(face = "bold", size = rel(1.25), colour = "#88398A", margin = margin(t = 0, r = 0, b = 6.6, l = 0, unit = "pt")),
-        legend.title = element_text(face = "bold"))
+        plot.title = element_text(face = "bold", size = rel(1.25), 
+                                  colour = "#88398A", 
+                                  margin = margin(t = 0, r = 0, b = 6.6,
+                                                  l = 0, unit = "pt")),
+        legend.title = element_text(face = "bold"),
+        panel.grid.major = element_line(color = "#D3D3D3"))
 }
 dat <- read.csv("RladiesSurveyResults.csv", header=TRUE)
 names(dat)[2] <- "often"
+library(stringr)
+dat[,2] <- str_wrap(dat[,2], width = 20)
+
 ggplot(data = dat, aes(x=reorder(often, table(often)[often]))) +
-  geom_bar(aes(y=(..count..)/sum(..count..)), alpha=.8) + 
+  geom_bar(aes(y=(..count..)/sum(..count..)), 
+           alpha=.8, color = "#562457") + 
   coord_flip() + 
   labs(y = "Proportion",  x = "Meeting Frequency", title = "How often should we meet?") +
   r_ladies_theme()
 ```
 
-##<span style="color:#88398A">R-ladies Ames: Why?</span> 
+##<span style="color:#88398A">R-Ladies Ames: Why?</span> 
 
 What do you hope to gain from the meetings?
 
@@ -139,7 +150,7 @@ wordcloud(gainCorpus, min.freq = 2, random.order =FALSE,
           colors = cols[6:9], ordered.colors = F)
 ```
 
-##<span style="color:#88398A">R-ladies Ames: What?</span> 
+##<span style="color:#88398A">R-Ladies Ames: What?</span> 
 
 What would you like to learn about `R`?
 
@@ -153,20 +164,20 @@ wordcloud(learnCorpus, min.freq = 2, random.order =FALSE,
           colors = cols[5:9], ordered.colors = F)
 ```
 
-##<span style="color:#88398A">R-ladies Ames: Meeting ideas</span> 
+##<span style="color:#88398A">R-Ladies Ames: Meeting ideas</span> 
 
 To do....
 
-##<span style="color:#88398A">R-ladies Ames: Getting to know you</span> 
+##<span style="color:#88398A">R-Ladies Ames: Getting to know you</span> 
 
 > - Student or faculty at Iowa State?
 > - Cats or dogs?
 > - Have or are working on a degree in Statistics?
 > - Chocolate or vanilla?
 
-##<span style="color:#88398A">R-ladies Ames: First meeting topic</span> 
+##<span style="color:#88398A">R-Ladies Ames: First meeting topic</span> 
 
-##<span style="color:#88398A">R-ladies Ames: Socializing</span> 
+##<span style="color:#88398A">R-Ladies Ames: Socializing</span> 
 
 Enjoy the treats! 
 
