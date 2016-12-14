@@ -91,7 +91,7 @@ Organizers:
 ```{r, echo=FALSE,message=FALSE,warning=FALSE,cache=TRUE,eval=FALSE}
 ##<span style="color:#88398A">R-ladies Ames: R-Ladies Ames</span> 
 library(ggplot2)
-dat <- read.csv("info.csv", header=TRUE)
+dat <- read.csv("RladiesSurveyResults.csv", header=TRUE)
 ggplot(data = dat, aes(x=ISU)) + geom_bar(aes(y=(..count..)/sum(..count..)))  + labs(y = "Proportion",  x = "ISU")
 
 ```
@@ -105,12 +105,13 @@ r_ladies_theme <- function(){
   theme(text = element_text(family = "HelveticaNeue", face = "plain", colour = 'black', size = 10,
                             hjust = .5, vjust = .5, angle = 0, lineheight = 1.1, 
                             margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "pt"), debug= FALSE), 
-        axis.text = element_text(colour = "#A3A4A9"), 
+        axis.text = element_text(colour = "#D3D3D3"), 
         axis.title = element_text(face = "bold", colour = "#88398A"), 
         plot.title = element_text(face = "bold", size = rel(1.25), colour = "#88398A", margin = margin(t = 0, r = 0, b = 6.6, l = 0, unit = "pt")),
         legend.title = element_text(face = "bold"))
 }
-dat <- read.csv("info.csv", header=TRUE)
+dat <- read.csv("RladiesSurveyResults.csv", header=TRUE)
+names(dat)[2] <- "often"
 ggplot(data = dat, aes(x=reorder(often, table(often)[often]))) +
   geom_bar(aes(y=(..count..)/sum(..count..)), alpha=.8) + 
   coord_flip() + 
@@ -118,6 +119,39 @@ ggplot(data = dat, aes(x=reorder(often, table(often)[often]))) +
   r_ladies_theme()
 ```
 
+##<span style="color:#88398A">R-ladies Ames: Why?</span> 
+
+What do you hope to gain from the meetings?
+
+```{r, echo = FALSE, fig.align='center', fig.height=5, message=FALSE}
+library(tm)
+library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
+cols <- brewer.pal(9, "BuPu")
+gainCorpus <- Corpus(VectorSource(dat[,3]))
+
+gainCorpus <- tm_map(gainCorpus, PlainTextDocument)
+gainCorpus <- tm_map(gainCorpus, removePunctuation)
+gainCorpus <- tm_map(gainCorpus, removeWords, stopwords('english'))
+gainCorpus <- tm_map(gainCorpus, stemDocument)
+wordcloud(gainCorpus, min.freq = 2, random.order =FALSE, 
+          colors = cols[6:9], ordered.colors = F)
+```
+
+##<span style="color:#88398A">R-ladies Ames: What?</span> 
+
+What would you like to learn about `R`?
+
+```{r, echo=FALSE, warning=FALSE, fig.align='center', fig.height=5}
+learnCorpus <- Corpus(VectorSource(dat[,4]))
+learnCorpus <- tm_map(learnCorpus, PlainTextDocument)
+learnCorpus <- tm_map(learnCorpus, removePunctuation)
+learnCorpus <- tm_map(learnCorpus, removeWords, stopwords('english'))
+learnCorpus <- tm_map(learnCorpus, stemDocument)
+wordcloud(learnCorpus, min.freq = 2, random.order =FALSE, 
+          colors = cols[5:9], ordered.colors = F)
+```
 
 ##<span style="color:#88398A">R-ladies Ames: Meeting ideas</span> 
 
