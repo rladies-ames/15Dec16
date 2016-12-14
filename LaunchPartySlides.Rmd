@@ -98,7 +98,7 @@ ggplot(data = dat, aes(x=ISU)) + geom_bar(aes(y=(..count..)/sum(..count..)))  + 
 
 ##<span style="color:#88398A">R-ladies Ames: Meeting frequency</span> 
 
-```{r, echo=FALSE,fig.height=5,fig.width=5,message=FALSE,warning=FALSE,cache=TRUE}
+```{r, echo=FALSE,fig.align='center',fig.height=5,message=FALSE,warning=FALSE,cache=TRUE}
 library(ggplot2)
 r_ladies_theme <- function(){
   theme_bw() %+replace% 
@@ -122,3 +122,19 @@ ggplot(data = dat, aes(x=reorder(often, table(often)[often]))) +
 ##<span style="color:#88398A">R-ladies Ames: Meeting ideas</span> 
 
 To do....
+
+##<span style="color:#88398A">R-ladies Ames: Getting to know you</span> 
+
+> - Student or faculty at Iowa State?
+> - Cats or dogs?
+> - Have or are working on a degree in Statistics?
+> - Chocolate or vanilla?
+
+##<span style="color:#88398A">R-ladies Ames: First meeting topic</span> 
+
+##<span style="color:#88398A">R-ladies Ames: Socializing</span> 
+
+Enjoy the treats! 
+
+![](http://www.reactiongifs.com/r/sBlIWMK.gif)
+
