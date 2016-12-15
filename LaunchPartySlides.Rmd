@@ -1,5 +1,5 @@
 ---
-title: <span style="color:#181818">R-Ladies Ames Launch Party</span>
+title: <span style="color:#181818">R-Ladies Ames<br>Launch Party! <img src="http://pix.iemoji.com/images/emoji/apple/ios-9/256/party-popper.png" height = "60px"/></span>
 author:  "Sam Tyner, Natalia da Silva"
 date: "15 Dec 2016"
 output: ioslides_presentation
@@ -23,10 +23,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ##<span style="color:#88398A">Outline</span> 
 1. R-Ladies Global
 2. R-Ladies Ames
-3. Meeting ideas
-4. Get to know each other
-5. Pick first meeting topic
-6. Socializing
+3. Get to know each other
+4. First meeting topic
+5. Socializing
 
 ##<span style="color:#88398A">R-Ladies Global</span> 
 
@@ -164,20 +163,25 @@ wordcloud(learnCorpus, min.freq = 2, random.order =FALSE,
           colors = cols[5:9], ordered.colors = F)
 ```
 
-
-##<span style="color:#88398A">R-Ladies Ames: Meeting ideas</span> 
-
-> - Scraping data from the web
-
-
 ##<span style="color:#88398A">R-Ladies Ames: Getting to know you</span> 
 
-> - Student, faculty at Iowa State or other Ames?
-> - Cats or dogs?
-> - Have or are working on a degree in Statistics?
-> - Chocolate or vanilla?
+> - Affiliated with Iowa State OR an outside company?
+> - Cat person OR dog person?
+> - Have/are working on a degree in Statistics OR another area?
+> - Chocolate ice cream OR vanilla ice cream?
+> - To plot in `R`: `base` plot OR `ggplot2` OR `lattice`?
 
-##<span style="color:#88398A">R-Ladies Ames: First meeting topic</span> 
+##<span style="color:#88398A">R-Ladies Ames: First Meeting Topic</span> 
+
+Getting and cleaning data from the Web
+
+- Scraping data using `rvest`
+- Reading and cleaning untidy files in `R`
+    + Reading Excel files into `R` with `readxl`
+    + <img src="http://www.theloop.ca/wp-content/uploads/2015/11/home_alone_scream.gif" height="100px"/>
+    </center>
+    + Cleaning data with the `tidyverse` packages: `dplyr`, `tidyr`, `purrr` 
+    + <img src="https://media.giphy.com/media/gjffzNjcRJcK4/giphy.gif"/ height="150px">
 
 ##<span style="color:#88398A">R-Ladies Ames: Socializing</span> 
 
